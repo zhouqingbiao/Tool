@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Tool</string>
+
+    <string name="cube">魔方</string>
+    <string name="f2l">F2L</string>
+    <string name="oll">OLL</string>
+    <string name="pll">PLL</string>
+    <string name="f2lNotice">F2L一组训练完毕！</string>
+    <string name="ollNotice">OLL一组训练完毕！</string>
+    <string name="pllNotice">PLL一组训练完毕！</string>
+    <string name="formula">公式</string>
+    <string name="notationText">x-->R\ny-->U\nz-->F\nM-->Rr\u0027\nE-->Uu\u0027\nS-->Bb\u0027</string>
+    <string name="notation">书写公式</string>
+
+
+    <string name="credit_card">信用卡</string>
+    <string name="date">DATE</string>
+    <string name="dayOfYear">DAY_OF_YEAR</string>
+    <string name="bank">银行</string>
+
+    <string name="push_up">俯卧撑</string>
 </resources>
