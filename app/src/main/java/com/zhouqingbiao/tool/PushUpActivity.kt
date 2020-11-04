@@ -1,5 +1,7 @@
 package com.zhouqingbiao.tool
 
+import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -7,12 +9,13 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
+
 class PushUpActivity : AppCompatActivity() {
 
     var calendar: Calendar = Calendar.getInstance()
 
-    // 拿到当前月的天数并排序
-    var dom = (1..calendar.getActualMaximum(Calendar.DAY_OF_MONTH)).toList().sorted()
+    // 拿到当前月的天数并转成list
+    var dom = (1..calendar.getActualMaximum(Calendar.DAY_OF_MONTH)).toList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +41,10 @@ class PushUpActivity : AppCompatActivity() {
 
             //倒计时结束后调用
             override fun onFinish() {
+                // 结束时播放通知音
+                val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                val rt = RingtoneManager.getRingtone(applicationContext, uri)
+                rt.play()
                 // 显示新的天数
                 pushUpButton.text = dom.first().toString();
                 // 倒计时结束释放使用按钮
