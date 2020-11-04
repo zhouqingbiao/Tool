@@ -31,23 +31,22 @@ class CubeActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.pllImageView).setImageResource(pllTemp)
         findViewById<ImageView>(R.id.pllImageView).tag = pllTemp
         pllTemps.remove(pllTemp)
+    }
 
-        // 根据Switch开关是否显示公式
-        if (findViewById<Switch>(R.id.formulaSwitch).isChecked) {
-            findViewById<TextView>(R.id.f2lFormulasTextView).text = f2lFormulas[f2lTemp]
-            findViewById<TextView>(R.id.ollFormulasTextView).text = ollFormulas[ollTemp]
-            findViewById<TextView>(R.id.pllFormulasTextView).text = pllFormulas[pllTemp]
+    // 书写公式开关
+    fun switchMoveNotation(view: View) {
+        // 检查Switch开关并进行相应设置
+        if (findViewById<Switch>(R.id.notationSwitch).isChecked) {
+            findViewById<TextView>(R.id.notationTextView).text = getText(R.string.notationText)
         } else {
-            findViewById<TextView>(R.id.f2lFormulasTextView).text = null
-            findViewById<TextView>(R.id.ollFormulasTextView).text = null
-            findViewById<TextView>(R.id.pllFormulasTextView).text = null
+            findViewById<TextView>(R.id.notationTextView).text = null
         }
     }
 
     // Switch开关点击事件
     fun formulaSwitch(view: View) {
+        // 检查Switch开关并进行相应设置
         if (findViewById<Switch>(R.id.formulaSwitch).isChecked) {
-
             findViewById<TextView>(R.id.f2lFormulasTextView).text =
                 f2lFormulas[findViewById<ImageView>(R.id.f2lImageView).tag]
 
@@ -496,16 +495,6 @@ class CubeActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.noticeTextView).text = getText(R.string.pllNotice)
         } else {
             findViewById<TextView>(R.id.noticeTextView).text = null
-        }
-    }
-
-    // 书写公式开关
-    fun switchMoveNotation(view: View) {
-        // 检查Switch开关并进行相应设置
-        if (findViewById<Switch>(R.id.notationSwitch).isChecked) {
-            findViewById<TextView>(R.id.notationTextView).text = getText(R.string.notationText)
-        } else {
-            findViewById<TextView>(R.id.notationTextView).text = null
         }
     }
 }
