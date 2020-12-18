@@ -25,4 +25,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, PushUpActivity::class.java)
         startActivity(intent)
     }
+
+    fun toKegelExercise(view: View) {
+        val intent = Intent(this, KegelExerciseActivity::class.java)
+        startActivity(intent)
+    }
 }

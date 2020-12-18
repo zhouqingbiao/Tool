@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/CubeButton"
+        android:id="@+id/Cube"
         android:layout_width="161.8dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/main_button_drawable"
         android:onClick="toCube"
@@ -20,18 +20,15 @@
         android:textColor="@color/colorButton"
         android:textSize="36sp"
         android:typeface="monospace"
-        app:layout_constraintEnd_toStartOf="@+id/CreditCardButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/CreditCardButton"
+        android:id="@+id/CreditCard"
         android:layout_width="161.8dp"
         android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="@drawable/main_button_drawable"
         android:onClick="toCreditCard"
         android:text="@string/credit_card"
@@ -39,20 +36,16 @@
         android:textColor="@color/colorButton"
         android:textSize="36sp"
         android:typeface="monospace"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/CubeButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/Cube"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/cubeButton"
+        android:id="@+id/PushUp"
         android:layout_width="161.8dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:background="@drawable/main_button_drawable"
         android:onClick="toPushUp"
         android:text="@string/push_up"
@@ -60,7 +53,22 @@
         android:textColor="@color/colorButton"
         android:textSize="36sp"
         android:typeface="monospace"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CubeButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Cube" />
+
+    <Button
+        android:id="@+id/KegelExercise"
+        android:layout_width="161.8dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/main_button_drawable"
+        android:onClick="toKegelExercise"
+        android:text="@string/kegel_exercise"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButton"
+        android:textSize="36sp"
+        android:typeface="monospace"
+        app:layout_constraintBaseline_toBaselineOf="@+id/PushUp"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

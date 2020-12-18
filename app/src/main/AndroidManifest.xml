@@ -25,6 +25,9 @@
         <activity
             android:name=".PushUpActivity"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".KegelExerciseActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
