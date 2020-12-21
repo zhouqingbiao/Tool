@@ -55,16 +55,16 @@ class PushUpActivity : AppCompatActivity() {
             }
         }
 
-        //设置总时长60s, 每1s触发一次onTick
+        // 设置总时长60s, 每1s触发一次onTick
         val cdt: CountDownTimer = object : CountDownTimer(millisInFuture, 1000) {
             override fun onTick(l: Long) {
-                // l 返回的是剩余毫秒数
+                // l返回的是剩余毫秒数
                 pushUpButton.text = (l / 1000).toString();
                 // 倒计时期间禁止使用按钮
                 pushUpButton.isClickable = false;
             }
 
-            //倒计时结束后调用
+            // 倒计时结束后调用
             override fun onFinish() {
                 // 结束时播放通知音
                 val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
