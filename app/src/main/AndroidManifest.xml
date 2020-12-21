@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhouqingbiao.tool">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +27,7 @@
             android:name=".PushUpActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".KegelExerciseActivity"
+            android:name=".CuoGuDaoActivity"
             android:parentActivityName=".MainActivity" />
     </application>
 

@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun toKegelExercise(view: View) {
-        val intent = Intent(this, KegelExerciseActivity::class.java)
+    fun toCuoGuDao(view: View) {
+        val intent = Intent(this, CuoGuDaoActivity::class.java)
         startActivity(intent)
     }
 }
