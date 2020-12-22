@@ -8,7 +8,7 @@
     tools:context=".CuoGuDaoActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/go"
         android:layout_width="108dp"
         android:layout_height="108dp"
         android:onClick="onClick"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/countdown"
         android:layout_width="161.8dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
@@ -30,5 +30,17 @@
         android:textSize="72sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/go" />
+
+    <TextView
+        android:id="@+id/sr"
+        android:layout_width="323.6dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toTopOf="@+id/go"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
