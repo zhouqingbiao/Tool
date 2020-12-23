@@ -28,7 +28,8 @@ class CuoGuDaoActivity : AppCompatActivity() {
 
         // 间隔12秒震动一次
         val timings = longArrayOf(0, 12000)
-        // 无限重复震动
+
+        // 是否重复震动：-1仅一次；0无限重复
         val repeat = 0
 
         // SDK判断
@@ -38,36 +39,39 @@ class CuoGuDaoActivity : AppCompatActivity() {
             vibrator.vibrate(timings, repeat)
         }
 
-        // 计时--动作
-        val cdtVibrator: CountDownTimer = object : CountDownTimer(720000, 12000) {
-            // 倒计时开始时调用
-            override fun onTick(l: Long) {
-                // 切换显示动作
-
-                if (findViewById<TextView>(R.id.sr).text == "" || findViewById<TextView>(R.id.sr).text == "Relax") {
-                    findViewById<TextView>(R.id.sr).text = "Shrink"
-                } else if (findViewById<TextView>(R.id.sr).text == "Shrink") {
-                    findViewById<TextView>(R.id.sr).text = "Relax"
-                }
-            }
-
-            // 倒计时结束时调用
-            override fun onFinish() {
-                // 重置动作显示
-                findViewById<TextView>(R.id.sr).text = null
-            }
-        }
-
-        // 开始计时
-        cdtVibrator.start();
-
         // 默认12分钟
         val millisInFuture: Long = 720000
 
         // 间隔一秒显示时间
         val countDownInterval: Long = 1000
 
-        // 真·计时
+        // 间隔十二秒显示动作
+        val countDownIntervalVibrator: Long = 12000
+
+        // 计时--动作
+        val cdtVibrator: CountDownTimer =
+            object : CountDownTimer(millisInFuture, countDownIntervalVibrator) {
+                // 倒计时开始时调用
+                override fun onTick(l: Long) {
+                    // 切换动作显示
+                    if (findViewById<TextView>(R.id.sr).text == "" || findViewById<TextView>(R.id.sr).text == "Relax") {
+                        findViewById<TextView>(R.id.sr).text = "Shrink"
+                    } else if (findViewById<TextView>(R.id.sr).text == "Shrink") {
+                        findViewById<TextView>(R.id.sr).text = "Relax"
+                    }
+                }
+
+                // 倒计时结束时调用
+                override fun onFinish() {
+                    // 重置动作显示
+                    findViewById<TextView>(R.id.sr).text = null
+                }
+            }
+
+        // 开始计时--动作
+        cdtVibrator.start();
+
+        // 计时·真
         val cdt: CountDownTimer = object : CountDownTimer(millisInFuture, countDownInterval) {
             // 倒计时开始时调用
             override fun onTick(l: Long) {
@@ -82,18 +86,18 @@ class CuoGuDaoActivity : AppCompatActivity() {
                 val rt = RingtoneManager.getRingtone(applicationContext, uri)
                 rt.play()
 
-                // 恢复按钮
-                findViewById<Button>(R.id.go).isClickable = true
+                // 取消震动
+                vibrator.cancel()
 
                 // 重置时间显示
                 findViewById<TextView>(R.id.countdown).text = null
 
-                // 取消震动
-                vibrator.cancel()
+                // 恢复按钮
+                findViewById<Button>(R.id.go).isClickable = true
             }
         }
 
-        // 开始计时
+        // 开始计时·真
         cdt.start();
     }
 }
