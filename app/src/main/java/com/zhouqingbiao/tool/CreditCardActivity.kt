@@ -11,7 +11,14 @@ class CreditCardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_credit_card)
 
         // 银行
-        val banks = mapOf(1 to "中国农业银行", 2 to "中国建设银行", 3 to "中国银行", 4 to "中国工商银行", 0 to "中国邮政储蓄银行")
+        val banks = mapOf(
+            1 to "中国农业银行",
+            2 to "中国建设银行",
+            3 to "中国银行",
+            4 to "中国工商银行",
+            5 to "中国邮政储蓄银行",
+            0 to "广发银行"
+        )
 
         // 日历
         var calendar: Calendar = Calendar.getInstance()
