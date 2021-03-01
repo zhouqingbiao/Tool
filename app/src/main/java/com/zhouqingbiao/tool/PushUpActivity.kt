@@ -37,24 +37,6 @@ class PushUpActivity : AppCompatActivity() {
         // 默认倒计时60秒
         var millisInFuture: Long = 60000
 
-        // 按照天数进行倒计时折算
-        when (pushUpButton.text) {
-            "1" -> millisInFuture = 5000
-            "2" -> millisInFuture = 10000
-            "3" -> millisInFuture = 15000
-            "4" -> millisInFuture = 20000
-            "5" -> millisInFuture = 25000
-            "6" -> millisInFuture = 30000
-            "7" -> millisInFuture = 35000
-            "8" -> millisInFuture = 40000
-            "9" -> millisInFuture = 45000
-            "10" -> millisInFuture = 50000
-            "11" -> millisInFuture = 55000
-            else -> {
-                millisInFuture = 60000
-            }
-        }
-
         // 设置总时长60s, 每1s触发一次onTick
         val cdt: CountDownTimer = object : CountDownTimer(millisInFuture, 1000) {
             // 倒计时开始时调用
